@@ -11,19 +11,23 @@ import time
 path = "D:\\Watson Tech Academy repositories\\Python_Projects\\SAtest"
 
 dirs = os.listdir(path)
-modification_time = os.path.getmtime(path)  # Get the time of last modifation 
-local_time = time.ctime(modification_time)  # convert the time to local time
+
 
 def index():# This would print all the files and directories
     for file in dirs:
         abpath = os.path.join(path, file)
+        modification_time = os.path.getmtime(file)  # Get the time of last modifation 
+        local_time = time.ctime(modification_time)  # convert the time to local time
         print(abpath, local_time)
 
 def index_txt():
-    for file in dirs:
+       for file in dirs:
         if file.endswith(".txt"):
             with open(file, 'r') as f:
                 data = f.read()
+                modification_time = os.path.getmtime(file)  # Get the time of last modifation 
+                local_time = time.ctime(modification_time)  # convert the time to local time
+
                 print(data, local_time,"\n")
                 f.close()
 
