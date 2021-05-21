@@ -8,7 +8,7 @@ DONE- Your script will need to print each file ending with a .”txt” file ext
 import os
 import sys
 import time
-path = "d:\\python_projects\\SAtest\\"
+path = "D:\\Watson Tech Academy repositories\\Python_Projects\\SAtest"
 
 dirs = os.listdir(path)
 modification_time = os.path.getmtime(path)  # Get the time of last modifation 
