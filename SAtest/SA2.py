@@ -9,9 +9,7 @@ import os
 import sys
 import time
 path = "D:\\Watson Tech Academy repositories\\Python_Projects\\SAtest"
-
 dirs = os.listdir(path)
-
 
 def index():# This would print all the files and directories
     for file in dirs:
@@ -30,8 +28,6 @@ def index_txt():
 
                 print(data, local_time,"\n")
                 f.close()
-
-                
 
 if __name__ == "__main__":
     index()
