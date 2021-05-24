@@ -3,7 +3,7 @@ class User:
     email = ' '
     password = '8675309'
     accountN = 0
-    join date = ' '
+    join_date = ' '
     ''' I created the user class to give all the
         basic things that everyone would need.
         In the begining this is the information
@@ -22,7 +22,7 @@ class Admin:
     '''
     
 
-class Character(user):
+class Character(User):
     CharacterName = ' '
     CharacterArchtype = ' '
     '''The player class would inherit
@@ -35,7 +35,7 @@ class Character(user):
     '''
 
 
-class GameMaster(user,Admin):
+class GameMaster(User,Admin):
     GMname = ' ' 
     GMrank = ' '
     ''' The GM class or GameMaster class would be
