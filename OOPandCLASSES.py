@@ -48,7 +48,7 @@ class Bacterium(Organism):
     orgin = 'Mars'
 
     def replication(self):
-        msg = " \n The cells begin to divide and multiply into two seperate organisms!"
+        msg = " \nThe cells begin to divide and multiply into two seperate organisms!"
         return msg
 
 

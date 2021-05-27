@@ -33,7 +33,7 @@ class Employee(User):
         entry_password = input("Enter your password")
         entry_storeN = input("Enter store number:")
         if (entry_name == self.name and entry_password == self.password and entry_storeN == self.store_number): # if name password and store number are all correct do this
-            print("Welcom back {}, store {} is luck to have you.".format(entry_name,entry_storeN))
+            print("Welcom back employee number {}, you are assigned to store {} begin labor now.".format(self.employee_number,entry_storeN))
         else:
             print("Invalid Entry")
 
