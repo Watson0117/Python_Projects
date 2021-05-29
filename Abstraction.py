@@ -17,7 +17,7 @@ class Character(ABC): # this should set Character as an abstract base class
 
 class GainXP(Character):
 # this will define howw to implement the levelUp function from its parent BeginingLVL class
-    def levelUP(self, amount):
+    def levelUp(self, amount):
         print("You have gained {} level(s) you are getting more powerfull!".format(amount))
 
 T = GainXP()      
