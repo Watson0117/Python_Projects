@@ -1,20 +1,8 @@
 import shutil
 import os
 import datetime as dt
-
-
-
-
-
-
 import tkinter as tk
 from tkinter import filedialog as fd
-
-
-
-
-
-import tkinter
 from tkinter import * 
 
 
