@@ -69,9 +69,9 @@ class ParentWindow(Frame):
             now = dt.datetime.now() # this shold set the current time
             ago = now-dt.timedelta(hours=24) # this should specify the last 24 hours
         
-            st = os.path.join(src+i) 
-            mtime = dt.datetime.fromtimestamp(st.st_mtime)
-            if mtime > ago:
+            st = os.path.getmtime(src) 
+            
+            if st > ago:
             # we are saying mobve the files represented by i to the destination folder
                 shutil.copy(src+i, dest)
 
