@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page-title %}App Builder 9000{% endblock %}
+{% block page-subtitle %}Python Live Project{% endblock %}
+{% block button1 %}<a href="#apps" class="contact-btn">Portfolio</a>{% endblock %}
+{% block button2 %}<a href="#about" class="contact-btn">Contact Us</a>{% endblock %}
+
+{% block appcontent %}
+    <section class="masonry-grid" id="apps">
+        <br><br>
+        <h2 class="sub-title">App Directory</h2>
+          <div class="grid">
+
+              <!-- SciFi Watchlist Link -->
+              <a href="{% url 'SciFi-Home' %}" class="grid-item app-image">
+                  <img src="{% static 'SciFiWatchlist/CSS/images/SciFiWatchlist_image4.jpg' %}" alt="Alien planet">
+                  <div class="fadedbox">
+                      <div class="title text">SciFi Watchlist</div>
+                  </div>
+              </a>
+              <!-- End SciFi Watchlist Link -->
+
+              <!-- Hip-Hop Reviews Link -->
+              <a href="{% url 'HipHopReviews_home' %}" class="grid-item app-image">
+                  <img src="{% static 'images/MF_DOOM.jpg' %}" alt="MF DOOM">
+                  <div class="fadedbox">
+                      <div class="title text">Hip-Hop Reviews</div>
+                  </div>
+              </a>
+              <!-- End Hip-Hop Reviews Link -->
+
+              <!-- Quotes Link -->
+              <a href="{% url 'Quotes_home' %}" class="grid-item app-image">
+                  <img src="{% static 'images/app-images/Tree.jpg' %}" alt="Nebula">
+                  <div class="fadedbox">
+                      <div class="title text">Quotes</div>
+                  </div>
+              </a>
+              <!-- End Quotes Link -->
+
+              <!-- Zoo Animals Link -->
+              <a href="{% url 'zoo_home' %}" class="grid-item app-image">
+                  <img src="{% static 'images/bassleri.jpg' %}" alt="Ameerga bassleri">
+                  <div class="fadedbox">
+                      <div class="title text">Zoo Database</div>
+                  </div>
+              </a>
+              <!-- End Zoo Animals Link -->
+
+              <!-- Villager Registry Link -->
+              <a href="{% url 'villager_home' %}" class="grid-item app-image">
+                  <img src="{% static 'Villager_Registry/images/ac_closeup.jpg' %}" alt="Animal Crossing Residents">
+                  <div class="fadedbox">
+                      <div class="title text">ACNH Villager Registry</div>
+                  </div>
+              </a>
+              <!-- End Villager Registry Link -->
+
+              <!-- Recipe Maker Link -->
+              <a href="{% url 'Recipe_Maker' %}" class="grid-item app-image">
+                  <img src="{% static 'Recipe_Maker/images/backgorund_image.jpeg' %}" alt="Pizza">
+                  <div class="fadedbox">
+                      <div class="title text">Recipe Maker</div>
+                  </div>
+              </a>
+              <!-- End Recipe Maker Link -->
+
+              <!-- RidleyVerse Link -->
+              <a href="{% url 'RidleyVerse-home' %}" class="grid-item app-image">
+                  <img src="{% static 'RidleyVerse/CSS/images/RidleyVerse_RidleyScott.jpg' %}" alt="Alien planet">
+                  <div class="fadedbox">
+                      <div class="title text">RidleyVerse</div>
+                  </div>
+              </a>
+              <!-- End RidleyVerse Watchlist Link -->
+
+<!--               Working Comedians Link
+              <a href="{% url 'workingcomedians_home' %}" class="grid-item app-image">
+                  <img src="{% static 'WorkingComedians/images/laughing_mouth.png' %}" alt="mouth">
+                  <div class="fadedbox">
+                      <div class="title text">Working Comedians</div>
+                  </div>
+              </a>
+               End Working Comedians Link -->
+
+              <!-- Blogs Link -->
+              <a href="{% url 'blogs' %}" class="grid-item app-image">
+                  <img src="{% static 'pic.jpeg' %}" alt="pic">
+                  <div class="fadedbox">
+                      <div class="title text">Blogs</div>
+                  </div>
+              </a>
+              <!-- End Blogs Link -->
+
+              <!-- NBA Stats Link -->
+              <a href="{% url 'stats-home' %}" class="grid-item app-image">
+                  <img src="{% static 'images/nba-logo.jpeg' %}" alt="nba pic">
+                  <div class="fadedbox">
+                      <div class="title text">NBA Stats</div>
+                  </div>
+              </a>
+              <!-- End NBA Stats Link -->
+
+              <!-- Precious Metals link -->
+              <a href="{% url 'PreciousMetals_home' %}" class="grid-item app-image">
+                  <img src="{% static 'images/preciousmetals_Image.jpg' %}" alt="metals home">
+                  <div class="fadedbox">
+                      <div class="title text">Precious Metals</div>
+                  </div>
+              </a>
+
+              <!-- Inventory Control link -->
+              <a href="{% url 'ControlInventory_home' %}" class="grid-item app-image">
+                  <img src="{% static 'ControlInventory/images/invcontrol.jpg' %}" alt="inventorycontrolhome">
+                  <div class="fadedbox">
+                      <div class="title text">Inventory Control</div>
+                  </div>
+              </a>
+              <!-- End Inventory Control Link -->
+
+          </div>
+    </section>
+
+    <section class="beating-heart" id="about">
+        <div class="wrapper">
+            <h2 class="sub-title">About Us</h2>
+            <p>We're creating software designed to help hobbyists keep track of their collections of items <br/>
+                as well as interact with APIs and use DataScraping to get up to date information on things <br/>
+                related to those collections and hobbies. This project is built using Python, Django, SQLite,
+                and HTML/CSS.</p>
+            <span>We</span>
+            <svg class="heart" viewBox="0 0 50 50">
+                <path style="fill:red;" d="M24.85,10.126c2.018-4.783,6.628-8.125,11.99-8.125c7.223,0,12.425,6.179,13.079,13.543
+                	c0,0,0.353,1.828-0.424,5.119c-1.058,4.482-3.545,8.464-6.898,11.503L24.85,48L7.402,32.165c-3.353-3.038-5.84-7.021-6.898-11.503
+                	c-0.777-3.291-0.424-5.119-0.424-5.119C0.734,8.179,5.936,2,13.159,2C18.522,2,22.832,5.343,24.85,10.126z"/>
+            </svg>
+            <span>Python</span>
+        </div>
+    </section>
+{% endblock %}
+
