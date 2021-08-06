@@ -40,18 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'bootstrap4',
     'crispy_forms',
-    'SciFiWatchlist',
-    'HipHopReviews',
-    'Quotes',
-    'ZooAnimals',
-    'Villager_Registry',
-    'Recipe_Maker',
-    'RidleyVerse',
-    'WorkingComedians',
-    'Blogs',
-    'PreciousMetals',
-    'NBAstats',
-    'ControlInventory'
+    'RidleyVerse'
 ]
 
 MIDDLEWARE = [

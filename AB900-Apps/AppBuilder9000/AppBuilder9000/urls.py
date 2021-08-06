@@ -23,18 +23,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('SciFiWatchlist/', include('SciFiWatchlist.urls')),
-    path('HipHopReviews/', include('HipHopReviews.urls')),
-    path('Quotes/', include('Quotes.urls')),
-    path('ZooAnimals/', include('ZooAnimals.urls')),
-    path('VillagerRegistry_Index/', include('Villager_Registry.urls')),
-    path('Recipe_Maker/', include('Recipe_Maker.urls')),
     path('RidleyVerse/', include('RidleyVerse.urls')),
-    path('WorkingComedians/', include('WorkingComedians.urls')),
-    path('Blogs/', include('Blogs.urls')),
-    path('NBAstats/', include('NBAstats.urls')),
-    path('PreciousMetals/', include('PreciousMetals.urls')),
-    path('ControlInventory/', include('ControlInventory.urls'))
 ]
 
 #urlpatterns +=staticfiles_urlpatterns()
