@@ -20,6 +20,7 @@
     <li><a href="#about-the-repository">About The Repository</a></li>
     <li><a href="#projects">Projects</a></li>
     <ul>
+        <li><a href="#ridleyverse">RidleyVerse</a></li>
         <li><a href="#file-transfer-program">File Transfer Program</a></li>
         <li><a href="#phonebook">Phonebook</a></li>
         <li><a href="#checkbook">Checkbook</a></li>
@@ -40,7 +41,9 @@ This repository serves as a record of all the files and projects completed durin
 
 ## Projects
 
-### RidleyVerse Site
+### RidleyVerse
+ The RidleyVers is a collection of movies that share a common universe. The program works as a website and uses html, CSS, Django, BeautifulSoup, and Python. Block tags are used to link each html file to create a whole site.
+ The purpose is to create a master list of movies form the connected Ridleyverse. There is a form to enter the details of the movies such as film name, director, actors, plot. The movies are stored in a database. The Full Story button calls a BS function that pulls \<p\> tags from a list on IMDB, (link below). It then concentrates all of the text into a full block containing the entire story of the RidleyVerse as well as how each film is connected. I chose the Ridleyverse as my topic but this program could be applied to any number of film series. It could also be a master list of movies that could have a personal review section to store you persona opinion on the movie. It's like a media manager in a way.
 <img src="RVgifshort.gif" alt="Logo" width="800" height="600">
 
 ### File Transfer Program
