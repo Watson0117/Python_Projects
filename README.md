@@ -39,6 +39,10 @@
 This repository serves as a record of all the files and projects completed during The Tech Academy's Python course. Below are programs and modules that iv used within the course. I have a beginning knowledge base to which I can expand and become more fluent. At this point in time I can get a set of instructions and then work on accomplishing them through research of anything I don't know how to do and incorporating what I do.
 
 ## Projects
+
+### RidleyVerse Site
+<img src="RVgifshort.gif" alt="Logo" width="800" height="600">
+
 ### File Transfer Program
   This prohram allows the use to specify the directorys for a start point and destination. Then with a click the user can copy all files created or modified within 24 hours from   the start folder to the destination folder.
 <br><br>
