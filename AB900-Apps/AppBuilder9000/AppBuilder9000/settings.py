@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'bootstrap4',
     'crispy_forms',
-    'RidleyVerse'
+    'RidleyVerse',
+    'YTfeed'
 ]
 
 MIDDLEWARE = [

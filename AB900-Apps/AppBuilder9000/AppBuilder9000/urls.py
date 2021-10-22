@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('RidleyVerse/', include('RidleyVerse.urls')),
+    path('YTfeed/', include('YTfeed.urls')),
 ]
 
 #urlpatterns +=staticfiles_urlpatterns()
