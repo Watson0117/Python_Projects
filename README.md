@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <p align="center">
   <a href="https://github.com/Watson0117/Python_Projects">
-    <img src="RVgifshort.gif" alt="Logo" width="180" height="60">
+    <img src="https://github.com/Watson0117/Python_Projects/blob/main/img/PythonLogo.png" alt="Logo" width="180" height="60">
   </a>
 
   <h3 align="center">Python Projects</h3>
