@@ -1,7 +1,7 @@
 import os
 import re
 from tkinter import Tk
-from tkinter.filedialog import askdirectory
+from tkinter.filedialog import Directory, askdirectory
 print("The first step will be to chooses the folder containing the files you wish to rename.\n")
 print("After this selection is made the user may pick up to 3 keywords to remove from the file names. leave unneeded inputs blank and continue./n")
 dirName = askdirectory() # shows dialog box and return the path
@@ -47,7 +47,7 @@ for fname in os.listdir(dirName):
 for filename in os.listdir(dirName):
     if keyword1 in filename:    
         filepath = os.path.join(dirName, filename)
-        newfilepath = os.path.join(dirName, filename.replace(keyword1," "))
+        newfilepath = os.path.join(dirName, filename.replace(keyword1,""))
         os.rename(filepath, newfilepath)
 
 for filename in os.listdir(dirName):
@@ -64,24 +64,33 @@ for filename in os.listdir(dirName):
 ################  Cleanup --- () and [] removal ----###########################################################
 
 #def parRemover():# this function should find all text within () and remove it from the file name.
-for filename in os.listdir(dirName):
-    res = re.findall(r'\(.*?\)', filename)
-    item = " "
-    for x in res:
-        item += " "+ x
-        if item in filename:    
-            filepath = os.path.join(dirName, filename)
-            newfilepath = os.path.join(dirName, filename.replace(item,""))
-            os.rename(filepath, newfilepath)
+#for filename in os.listdir(dirName):
+#    res = re.findall(r'\(.*?\)', filename)
+#    item = " "
+#    for x in res:
+#        item += " " + x
+#        if item in filename:    
+#            filepath = os.path.join(dirName, filename)
+#            newfilepath = os.path.join(dirName, filename.replace(item,""))
+#            os.rename(filepath, newfilepath)
+
+
+#first get Directory
+#then get file name in dictionary.
+#transform dic to string
+#edit string
+#save to new var 
+#substitust that value for the file name.
+
 
 for filename in os.listdir(dirName):
+    for ele in s:
     res = re.findall(r'\[.*?\]', filename)
-    item = " "
-    for x in res:
-        item += " "+ x
-        if item in filename:    
+    item = ""
+    string = re.sub("\[.*?\]","",res)
+    if string in filename:    
             filepath = os.path.join(dirName, filename)
-            newfilepath = os.path.join(dirName, filename.replace(item,""))
+            newfilepath = os.path.join(dirName, filename.replace(replace this with new var,""))
             os.rename(filepath, newfilepath)
 
 
@@ -89,7 +98,7 @@ for filename in os.listdir(dirName):
 for filename in os.listdir(dirName):
     if keyDF1 in filename:    
         filepath = os.path.join(dirName, filename)
-        newfilepath = os.path.join(dirName, filename.replace(keyDF1,"  "))
+        newfilepath = os.path.join(dirName, filename.replace(keyDF1," "))
         os.rename(filepath, newfilepath)
 
 def dblspcRemover(): # must be befor file type fixes to not mess up ther pattern
