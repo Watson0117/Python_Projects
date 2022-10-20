@@ -3,7 +3,7 @@ import re
 from tkinter import Tk
 from tkinter.filedialog import Directory, askdirectory
 print("The first step will be to chooses the folder containing the files you wish to rename.\n")
-print("After this selection is made the user may pick up to 3 keywords to remove from the file names. leave unneeded inputs blank and continue./n")
+print("After this selection is made the user may pick up to 3 keywords to remove from the file names. leave unneeded inputs blank and continue.\n")
 dirName = askdirectory() # shows dialog box and return the path
 print(dirName)
 ###########---kEYWORD KEYS---######################
@@ -13,8 +13,8 @@ keyword3 = input('Choose the third keyword would you like to remove from file na
 #############---STANDARD REMOVAL KEYS---##########
 
 keyDF1 = "."
-keyDF2 = "  "
-keyDF3 = "x265"
+keyDF2 = "-"
+keyDF3 = "  "
 keyDF4 = "10bit"
 keyDF5 = "[CBM]"
 keyDF6 = "480p"
@@ -27,8 +27,8 @@ keyDF12 = "DUAL Audio"
 keyDF13 = "_"
 keyDF14 = "DVD"
 keyDF15= "BluRay" 
-keyDF16 = "()"
-#keyDF17 = "" 
+keyDF16 = "BRrip"
+keyDF17 = "x265"
 #############---FILE TYPE KEYS---#######
 keyjpg = " jpg"
 keymov = " mov"
@@ -38,6 +38,20 @@ keymp4 = " mp4"
 keymp3 = " mp3"
 keysrt = " srt"
 keypdf = " pdf"
+keysrt = " srt"
+keysfv = " sfv"
+
+keyjpg2 = " .jpg"
+keymov2 = " .mov"
+keymkv2 = " .mkv"
+keygif2 = " .gif"
+keymp42 = " .mp4"
+keymp32 = " .mp3"
+keysrt2 = " .srt"
+keypdf2 = " .pdf"
+keysrt2 = " .srt"
+keysfv2 = " .sfv"
+
 
 ##################### Main ############################################################
 for fname in os.listdir(dirName):
@@ -89,20 +103,20 @@ for filename in os.listdir(dirName):
         newfilepath = os.path.join(dirName, filename.replace(keyDF1," "))
         os.rename(filepath, newfilepath)
 
-def dblspcRemover(): # must be befor file type fixes to not mess up ther pattern
+for filename in os.listdir(dirName):
+    if keyDF2 in filename:    
+        filepath = os.path.join(dirName, filename)
+        newfilepath = os.path.join(dirName, filename.replace(keyDF2," "))
+        os.rename(filepath, newfilepath)
+
+def dblspcRemover(): # must be before file type fixes to not mess up there pattern
     for filename in os.listdir(dirName):
-        if keyDF2 in filename:    
+        if keyDF3 in filename:    
             filepath = os.path.join(dirName, filename)
-            newfilepath = os.path.join(dirName, filename.replace(keyDF2," "))
+            newfilepath = os.path.join(dirName, filename.replace(keyDF3," "))
             os.rename(filepath, newfilepath)
 for x in range(6):
     dblspcRemover()
-
-for filename in os.listdir(dirName):
-    if keyDF3 in filename:    
-        filepath = os.path.join(dirName, filename)
-        newfilepath = os.path.join(dirName, filename.replace(keyDF3,""))
-        os.rename(filepath, newfilepath)
 
 for filename in os.listdir(dirName):
     if keyDF4 in filename:    
@@ -161,7 +175,7 @@ for filename in os.listdir(dirName):
 for filename in os.listdir(dirName):
     if keyDF13 in filename:    
         filepath = os.path.join(dirName, filename)
-        newfilepath = os.path.join(dirName, filename.replace(keyDF13,""))
+        newfilepath = os.path.join(dirName, filename.replace(keyDF13," "))
         os.rename(filepath, newfilepath)
 
 for filename in os.listdir(dirName):
@@ -176,6 +190,11 @@ for filename in os.listdir(dirName):
         newfilepath = os.path.join(dirName, filename.replace(keyDF15,""))
         os.rename(filepath, newfilepath)
 
+for filename in os.listdir(dirName):
+    if keyDF16 in filename:    
+        filepath = os.path.join(dirName, filename)
+        newfilepath = os.path.join(dirName, filename.replace(keyDF16,""))
+        os.rename(filepath, newfilepath)
 
 ############# Fixing file type section # rquiered to get the files to save as ther current type the period remover lso removes the . in .jpg and such this fixes that.
 for filename in os.listdir(dirName):
@@ -218,14 +237,68 @@ for filename in os.listdir(dirName):
 for filename in os.listdir(dirName):
     if keysrt in filename:    
         filepath = os.path.join(dirName, filename)
-        newfilepath = os.path.join(dirName, filename.replace(keymp3,".srt"))
+        newfilepath = os.path.join(dirName, filename.replace(keysrt,".srt"))
         os.rename(filepath, newfilepath)
 
 for filename in os.listdir(dirName):
-    if keyDF16 in filename:    
+    if keysfv in filename:    
         filepath = os.path.join(dirName, filename)
-        newfilepath = os.path.join(dirName, filename.replace(keyDF16,""))
+        newfilepath = os.path.join(dirName, filename.replace(keysfv,".sfv"))
         os.rename(filepath, newfilepath)
+
+
+###added space elimination
+for filename in os.listdir(dirName):
+    if keyjpg2 in filename:    
+        filepath = os.path.join(dirName, filename)
+        newfilepath = os.path.join(dirName, filename.replace(keyjpg2,".jpg"))
+        os.rename(filepath, newfilepath)
+
+for filename in os.listdir(dirName):
+    if keymov2 in filename:    
+        filepath = os.path.join(dirName, filename)
+        newfilepath = os.path.join(dirName, filename.replace(keymov2,".mov"))
+        os.rename(filepath, newfilepath)
+
+
+for filename in os.listdir(dirName):
+    if keymkv2 in filename:    
+        filepath = os.path.join(dirName, filename)
+        newfilepath = os.path.join(dirName, filename.replace(keymkv2,".mkv"))
+        os.rename(filepath, newfilepath)
+
+for filename in os.listdir(dirName):
+    if keygif2 in filename:    
+        filepath = os.path.join(dirName, filename)
+        newfilepath = os.path.join(dirName, filename.replace(keygif2,".gif"))
+        os.rename(filepath, newfilepath)
+
+for filename in os.listdir(dirName):
+    if keymp42 in filename:    
+        filepath = os.path.join(dirName, filename)
+        newfilepath = os.path.join(dirName, filename.replace(keymp42,".mp4"))
+        os.rename(filepath, newfilepath)
+
+for filename in os.listdir(dirName):
+    if keymp32 in filename:    
+        filepath = os.path.join(dirName, filename)
+        newfilepath = os.path.join(dirName, filename.replace(keymp32,".mp3"))
+        os.rename(filepath, newfilepath)
+
+for filename in os.listdir(dirName):
+    if keysrt2 in filename:    
+        filepath = os.path.join(dirName, filename)
+        newfilepath = os.path.join(dirName, filename.replace(keysrt2,".srt"))
+        os.rename(filepath, newfilepath)
+
+for filename in os.listdir(dirName):
+    if keysfv2 in filename:    
+        filepath = os.path.join(dirName, filename)
+        newfilepath = os.path.join(dirName, filename.replace(keysfv2,".sfv"))
+        os.rename(filepath, newfilepath)
+
+for x in range(6):
+    dblspcRemover()
 
 #### conformation   #########
 for fname in os.listdir(dirName):
