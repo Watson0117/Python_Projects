@@ -12,6 +12,7 @@ keyword1 = input('Choose the first keyword would you like to remove from file na
 keyword2 = input('Choose the second keyword would you like to remove from file names?\n')# can be left blank
 keyword3 = input('Choose the third keyword would you like to remove from file names?\n')# can be left blank
 #############---STANDARD REMOVAL KEYS---##########
+keysearch = [keyword1, keyword2, keyword3]
 badformating = [".", "-", "_", "  "]
 keywords = ["720", "720p", "480", "480p","1080p", "1080", "[CBM]", "DUAL Audio", "10bit", "DVD", "BluRay", "BRrip", "x256", "HDrip", "EVO"]
 
@@ -65,7 +66,7 @@ for filename in os.listdir(dirName):
 
 for filename in os.listdir(dirName):
     if keyword3 in filename:    
-        filepath = os.path.join(dirName, filename) 
+        filepath = os.path.join(dirName, filename)
         newfilepath = os.path.join(dirName, filename.replace(keyword3,""))
         os.rename(filepath, newfilepath)
 ################  Cleanup --- () and [] removal ----###########################################################
@@ -87,7 +88,7 @@ for filename in os.listdir(dirName):
     os.rename(filepath, newfilepath)# this should take the now modified file name and renamt the target with the new name.
 
 for filename in os.listdir(dirName):   
-        filepath = os.path.join(dirName, filename)
+        filepath = os.path.join(dirName, filename) # could i use a cut or split at the end to keep the extension sepperate or maby file_extension = pathlib.Path('my_file.txt').suffix
         newfilepath = sub('|'.join(keywords),'',filepath)
         os.rename(filepath, newfilepath)
 
@@ -95,6 +96,8 @@ for filename in os.listdir(dirName):
 #        filepath = os.path.join(dirName, filename.split(type)
 #        newfilepath = sub('|'.join(badformating),'',filepath)
 #        os.rename(filepath, newfilepath)
+
+#join file name with extension 
 
 
 #################  Cleanup --- STANDARD REMOVALS ----###########################################################
