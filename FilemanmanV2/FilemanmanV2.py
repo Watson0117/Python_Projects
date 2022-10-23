@@ -13,13 +13,13 @@ keyword2 = input('Choose the second keyword would you like to remove from file n
 keyword3 = input('Choose the third keyword would you like to remove from file names?\n')# can be left blank
 #############---STANDARD REMOVAL KEYS---##########
 keysearch = [keyword1, keyword2, keyword3]
-badformating = [".", "-", "_", "  "]
-keywords = ["720", "720p", "480", "480p","1080p", "1080", "[CBM]", "DUAL Audio", "10bit", "DVD", "BluRay", "BRrip", "x256", "HDrip", "EVO"]
+badformating = ["\.", "-", "_", "  "]
+keywords = ["720", "720p", "480", "480p","1080p", "1080", "DUAL Audio", "10bit", "DVD", "BluRay", "BRrip", "x256", "HDrip", "EVO"]
 
-#keyDF1 = "."
-#keyDF2 = "-"
-#keyDF3 = "_"
-#keyDF4 = "  "
+keyDF1 = "."
+keyDF2 = "-"
+keyDF3 = "_"
+keyDF4 = "  "
 
 #############---FILE TYPE KEYS---#######
 keyjpg = " jpg"
@@ -89,52 +89,61 @@ for filename in os.listdir(dirName):
 
 for filename in os.listdir(dirName):   
         filepath = os.path.join(dirName, filename) # could i use a cut or split at the end to keep the extension sepperate or maby file_extension = pathlib.Path('my_file.txt').suffix
-        newfilepath = sub('|'.join(keywords),'',filepath)
-        os.rename(filepath, newfilepath)
+        newfilepath = sub('|'.join(keywords),"",filepath)
+        os.rename(filepath,newfilepath)
 
-#for filename in os.listdir(dirName):   
-#        filepath = os.path.join(dirName, filename.split(type)
-#        newfilepath = sub('|'.join(badformating),'',filepath)
+for filename in os.listdir(dirName):
+    str1 = ""# initialize an empty string
+    fName = (str1.join(filename)) # changes list to string
+    curfilename, suff = os.path.splitext(fName) # splits the path into root and extension pair such that root + extension == path
+    upfilename = sub('|'.join(badformating),' ',curfilename)
+    finfilename = (upfilename + suff)
+    filepath = os.path.join(dirName, filename) # could i use a cut or split at the end to keep the extension sepperate or maby file_extension = pathlib.Path('my_file.txt').suffix
+    newfilepath = os.path.join(dirName, finfilename)#this subs anything in the "keywords" lsit with an empty string
+    os.rename(filepath, newfilepath)#renames file with newfilename
+
+
+
+
+
+
+
+    #for filename in os.listdir(dirName):
+#    if keyDF1 in filename:    
+#        filepath = os.path.join(dirName, filename)
+#        newfilepath = os.path.join(dirName, filename.replace(keyDF1," "))
 #        os.rename(filepath, newfilepath)
-
-#join file name with extension 
-
-
+    string_new = string.rstrip("w.")
 #################  Cleanup --- STANDARD REMOVALS ----###########################################################
 
-for filename in os.listdir(dirName):
-    if keyDF1 in filename:    
-        filepath = os.path.join(dirName, filename)
-        newfilepath = os.path.join(dirName, filename.replace(keyDF1," "))
-        os.rename(filepath, newfilepath)
+#for filename in os.listdir(dirName):
+#    if keyDF1 in filename:    
+#        filepath = os.path.join(dirName, filename)
+#        newfilepath = os.path.join(dirName, filename.replace(keyDF1," "))
+#        os.rename(filepath, newfilepath)
 
-for filename in os.listdir(dirName):
-    if keyDF2 in filename:    
-        filepath = os.path.join(dirName, filename)
-        newfilepath = os.path.join(dirName, filename.replace(keyDF2," "))
-        os.rename(filepath, newfilepath)
+#for filename in os.listdir(dirName):
+#    if keyDF2 in filename:    
+#        filepath = os.path.join(dirName, filename)
+#        newfilepath = os.path.join(dirName, filename.replace(keyDF2," "))
+#        os.rename(filepath, newfilepath)
 
-for filename in os.listdir(dirName):
-    if keyDF3 in filename:    
-        filepath = os.path.join(dirName, filename)
-        newfilepath = os.path.join(dirName, filename.replace(keyDF3," "))
-        os.rename(filepath, newfilepath)
+#for filename in os.listdir(dirName):
+#    if keyDF3 in filename:    
+#        filepath = os.path.join(dirName, filename)
+#        newfilepath = os.path.join(dirName, filename.replace(keyDF3," "))
+#        os.rename(filepath, newfilepath)
 
-def dblspcRemover(): # must be before file type fixes to not mess up there pattern
-    for filename in os.listdir(dirName):
-        if keyDF4 in filename:    
-            filepath = os.path.join(dirName, filename)
-            newfilepath = os.path.join(dirName, filename.replace(keyDF4," "))
-            os.rename(filepath, newfilepath)
-for x in range(6):
-    dblspcRemover()
+#def dblspcRemover(): # must be before file type fixes to not mess up there pattern
+#    for filename in os.listdir(dirName):
+#        if keyDF4 in filename:    
+#            filepath = os.path.join(dirName, filename)
+#            newfilepath = os.path.join(dirName, filename.replace(keyDF4," "))
+#            os.rename(filepath, newfilepath)
+#for x in range(6):
+#    dblspcRemover()
 
-for filename in os.listdir(dirName):
-    for keys in keys:
-        if keys in filename:    
-            filepath = os.path.join(dirName, filename)
-            newfilepath = os.path.join(dirName, filename.replace(keys,""))
-            os.rename(filepath, newfilepath)
+
 
 ############# Fixing file type section # rquiered to get the files to save as ther current type the period remover lso removes the . in .jpg and such this fixes that.
 for filename in os.listdir(dirName):
@@ -237,8 +246,8 @@ for filename in os.listdir(dirName):
         newfilepath = os.path.join(dirName, filename.replace(keysfv2,".sfv"))
         os.rename(filepath, newfilepath)
 
-for x in range(6):
-    dblspcRemover()
+#for x in range(6):
+#    dblspcRemover()
 
 #### conformation   #########
 for fname in os.listdir(dirName):
