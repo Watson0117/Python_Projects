@@ -25,7 +25,6 @@ for fname in os.listdir(dirName):
 
 ################### Keywords ##########################################################
 for filename in os.listdir(dirName):
-    #emStr = ""# initialize an empty string
     fName = (emStr.join(filename)) # changes list to string
     curfilename, suff = os.path.splitext(fName) # splits the path into root and extension pair such that root + extension == path
     upfilename = sub('|'.join(keysearch),'',curfilename) # finds any instances of keysearch and repalaces them with an empty string.
@@ -36,7 +35,6 @@ for filename in os.listdir(dirName):
 
 ################  Cleanup --- () and [] removal ----###########################################################
 for filename in os.listdir(dirName):
-    #emStr = ""# initialize an empty string
     fName = (emStr.join(filename)) # changes list to string
     newFname = re.sub(r'\[.*?\]',"",fName) # this finds all instances of [] deletes them and the contents.
     filepath = os.path.join(dirName, filename) # should take the path and file name an create a string
@@ -44,7 +42,6 @@ for filename in os.listdir(dirName):
     os.rename(filepath, newfilepath)# this should take the now modified file name and renamt the target with the new name.
 
 for filename in os.listdir(dirName):
-    emStr = ""# initialize an empty string
     fName = (emStr.join(filename)) # changes list to string
     newFname = re.sub(r'\(.*?\)',"",fName)# this finds all instances of () deletes them and the contents
     filepath = os.path.join(dirName, filename) # should take the path and file name an create a string
@@ -58,7 +55,6 @@ for filename in os.listdir(dirName):
 
 #######################   formating    ###########################
 for filename in os.listdir(dirName):
-    emStr = ""# initialize an empty string
     fName = (emStr.join(filename)) # changes list to string
     curfilename, suff = os.path.splitext(fName) # splits the path into root and extension pair such that root + extension == path
     upfilename = sub('|'.join(badformating),' ',curfilename)
@@ -68,7 +64,6 @@ for filename in os.listdir(dirName):
     os.rename(filepath, newfilepath)#renames file with newfilename
 
 for filename in os.listdir(dirName):
-    emStr = ""# initialize an empty string
     fName = (emStr.join(filename)) # changes list to string
     curfilename, suff = os.path.splitext(fName) # splits the path into root and extension pair such that root + extension == path
     upfilename = curfilename.rstrip(" ") # rstrip removes whitspace at the end of a string
